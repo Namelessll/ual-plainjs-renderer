@@ -535,7 +535,7 @@ export class UALJsDom {
         padding: 30px;
         border: 1px solid #888;
         border-radius: 6px;
-        width: 370px;
+        width: 415px;
       }
 
       @media only screen and (max-width: 480px) {

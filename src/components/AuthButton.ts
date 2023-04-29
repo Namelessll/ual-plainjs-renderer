@@ -52,7 +52,7 @@ export class AuthButton extends UALJsAbstractBaseComponent {
 
       .ual-auth-text {
         display: inline-block;
-        padding: 12px 13px 12px 15px;
+        padding: 15px 13px 16px 15px;
         font-size: 1.25rem;
         font-weight: bold;
         letter-spacing: 1.1px;
@@ -128,7 +128,7 @@ export class AuthButton extends UALJsAbstractBaseComponent {
     let stateIconHtml = `
     <i
       class="fa fa-chevron-right"
-      style="float: right; padding: 8px; font-size: 1.5em; color: ${authenticator.getStyle().textColor}"
+      style="float: right; padding: 14px; font-size: 1.5em; color: ${authenticator.getStyle().textColor}"
       aria-hidden="true">
     </i>`
 
