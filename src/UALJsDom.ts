@@ -20,6 +20,7 @@ export class UALJsDom {
   private loginCallback: UserLoginCallback
   private containerElement: HTMLElement
   private buttonStyleOverride: string | boolean
+  private buttonName: string
   private authenticators: Authenticator[]
   private authStateString: string = ''
 
@@ -42,11 +43,13 @@ export class UALJsDom {
     authenticators: Authenticator[],
     containerElement: HTMLElement,
     buttonStyleOverride: string | boolean = false,
+    buttonName: string
   ) {
     this.loginCallback = loginCallback
     this.authenticators = authenticators
     this.containerElement = containerElement
     this.buttonStyleOverride = buttonStyleOverride
+    this.buttonName = buttonName
   }
 
   /**
@@ -79,7 +82,7 @@ export class UALJsDom {
 
     this.containerElement.appendChild(lightTippyStylesheet as HTMLElement)
 
-    const button = this.createButton()
+    const button = this.createButton(this.buttonName)
     const buttonStyles = this.createButtonStyles(this.buttonStyleOverride)
 
     this.containerElement.appendChild(buttonStyles)
@@ -457,11 +460,11 @@ export class UALJsDom {
   /**
    * Renders the Auth start button
    */
-  public createButton(): HTMLButtonElement {
+  public createButton(buttonName: string): HTMLButtonElement {
     const button = document.createElement('button')
     button.id = 'ual-button'
     button.className = 'ual-button-gen' // TODO: determine if this is needed
-    button.innerHTML = 'UAL Login'
+    button.innerHTML = buttonName.length > 0 ? buttonName : 'Login'
 
     return button
   }
