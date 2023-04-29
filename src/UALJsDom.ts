@@ -463,7 +463,7 @@ export class UALJsDom {
   public createButton(buttonName: string): HTMLButtonElement {
     const button = document.createElement('button')
     button.id = 'ual-button'
-    button.className = 'ual-button-gen' // TODO: determine if this is needed
+    button.className = 'gml-button' // TODO: determine if this is needed
     button.innerHTML = buttonName.length > 0 ? buttonName : 'Login'
 
     return button
