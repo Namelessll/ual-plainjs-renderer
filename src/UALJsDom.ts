@@ -43,7 +43,7 @@ export class UALJsDom {
     authenticators: Authenticator[],
     containerElement: HTMLElement,
     buttonStyleOverride: string | boolean = false,
-    buttonName: string
+    buttonName: string = ''
   ) {
     this.loginCallback = loginCallback
     this.authenticators = authenticators

@@ -37,7 +37,8 @@ describe('Authenticators', () => {
       mockLoginUserCallback,
       [baseAuthenticator],
       containerElement,
-      false
+      false,
+      ''
     )
 
     ualDom.generateUIDom()
