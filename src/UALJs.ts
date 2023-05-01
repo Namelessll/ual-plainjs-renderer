@@ -60,7 +60,7 @@ export class UALJs extends UAL {
    * is returned it will render the Auth Button and relevant DOM elements.
    *
    */
-  public init(reInitDom: boolean = false): void {
+  public init(): void {
     const authenticators = this.getAuthenticators()
 
     // perform this check first, if we're autologging in we don't render a dom
@@ -82,16 +82,14 @@ export class UALJs extends UAL {
         buttonName = ''
       } = this.renderConfig as UALJsRenderConfig
 
-      if (!reInitDom) {
-        this.dom = new UALJsDom(
-            this.loginUser,
-            authenticators.availableAuthenticators,
-            containerElement,
-            buttonStyleOverride,
-            buttonName)
+      this.dom = new UALJsDom(
+          this.loginUser,
+          authenticators.availableAuthenticators,
+          containerElement,
+          buttonStyleOverride,
+          buttonName)
 
-        this.dom!.generateUIDom()
-      }
+      this.dom!.generateUIDom()
     }
   }
 
