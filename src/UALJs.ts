@@ -130,8 +130,13 @@ export class UALJs extends UAL {
     this.activeAuthenticator = authenticator
 
     const invalidateSeconds = this.activeAuthenticator.shouldInvalidateAfter()
-    const invalidateAt = new Date()
+    let invalidateAt = new Date()
+
+    console.log(invalidateAt);
+
     invalidateAt.setSeconds(invalidateAt.getSeconds() + invalidateSeconds)
+
+    console.log(invalidateAt);
 
     localStorage.setItem(UALJs.SESSION_EXPIRATION_KEY, invalidateAt.toString())
     localStorage.setItem(UALJs.SESSION_AUTHENTICATOR_KEY, authenticator.constructor.name)
